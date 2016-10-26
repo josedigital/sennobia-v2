@@ -1,0 +1,70 @@
+@import 'Flickerplate/css/flickerplate.min.css'
+
+.Top-navigation
+  left: 0
+  position: fixed
+  right: 0
+  top: 0
+  transition: top 1.2s
+  width: 100%
+  z-index: 100
+
+.nav-up
+  top: -169px
+
+.Hero
+  background-color: $blue-lighter
+
+.Brand
+  text-align: center
+  +above($breakpoint-tablet)
+    position: fixed
+    top: -30px
+  img
+    padding-top: 1.5rem
+    width: 150px
+.Navigation
+  display: none
+  +above($breakpoint-tablet)
+    display: block
+  ul
+    float: right
+    font-family: $font-headings-secondary
+    font-size: 0.75rem
+    font-weight: 700
+    letter-spacing: 2px
+    padding-top: 3rem
+    text-transform: uppercase
+    li
+      display: inline-block
+      text-align: right
+      a
+        @extend .button
+        background-color: transparent
+        box-shadow: none
+        color: $white
+        &:hover
+          background-color: rgba($white, 0.75)
+          color: $blue-saturated-light
+
+.flicker
+  background-color: $dark-gray
+  height: 100vh
+  p
+    color: $text-color
+    margin-top: 1rem
+.flicker__title
+  color: white
+  margin: 5rem 0 0
+  &--main
+    font-family: $font-headings
+.flicker__content--center
+  margin: 0 auto
+  text-align: center
+  width: 50%
+.flicker__content
+  margin-left: 15%
+  margin-right: 15%
+  +above($breakpoint-tablet)
+    margin-left: 35%
+    margin-right: 15%

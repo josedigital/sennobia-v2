@@ -1,0 +1,48 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/css/flickerplate.min.css")
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    header.Top-navigation.cf
+      .container.cf
+        .grid-flex-container
+          .Brand.grid-flex-cell
+            a(href="#home", title="Home")
+              img(src="img/brand.svg", alt="Sennobia")
+          nav.Navigation.grid-flex-cell
+            ul.list-unstyled
+              li
+                a(href="#about") About
+              li
+                a(href="#products") Products
+              li
+                a(href="#contact") Contact
+
+    section.Home.no-spacing#home
+      block homeContent
+
+    section.About#about
+      block aboutContent
+
+    section.Products#products
+      block productsContent
+
+    section.Store.small-spacing
+      block storeContent
+
+    section.Contact#contact
+      block contactContent
+
+    footer.text-center
+      .container
+        h6 Handcrafted by Sennobia Cosmetics, LLC &bull; Las Vegas, Nevada
+        p All information copyright &copy; 2016 | Sennobia Cosmetics, LLC
+
+    script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
+    script(src="js/flickerplate.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js")
+    script(src="js/main.js")
+    script.
+      new flickerplate({ selector: '.flicker' });

@@ -1,0 +1,112 @@
+extends layout
+
+
+
+block homeContent
+  .flicker
+    ul
+      li(data-background="img/allproducts.jpg")
+        .flicker__content--center
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          a(href="#about").flicker__button.button.button-secondary.button-large.Pill-button Learn More
+      li(data-background="img/rejuv-large.jpg")
+        .flicker__content
+          h2.flicker__title Rejuvenating Cream
+          p Designed to help enhance, rejuvenate, firmness, uniformity of skin tone, hydration radiance, and tightness of skin to minimize appearance of fine lines and wrinkles on neck and face.
+          a(href="https://squareup.com/store/sennobia-cosmetics/item/rejuvenating-cream").flicker__button.button.button-primary.button-large.Pill-button Purchase
+          p $99.00 - 2.0 OZ
+      li(data-background="img/regen-large.jpg")
+        .flicker__content
+          h2.flicker__title Regenerating Cream
+          p Designed to help renew vitality, enhance regeneration, firmness, uniformity of skin tone, hydration, and radiance.
+          a(href="https://squareup.com/store/sennobia-cosmetics/item/regenerating-cream").flicker__button.button.button-primary.button-large.Pill-button Purchase
+          p $89.00 - 2.0 oz
+      li(data-background="img/eye-large.jpg")
+        .flicker__content
+          h2.flicker__title Eye Cream
+          p Eye renewal cream works to minimize puffiness, fine lines, wrinkles and dark circles, firms, tones skin.
+          a(href="https://squareup.com/store/sennobia-cosmetics/item/eye-cream").flicker__button.button.button-primary.button-large.Pill-button Purchase
+          p $69.00 - 0.5 OZ
+
+
+block aboutContent
+  .container
+    .Content-one-half
+      h2 About Sennobia
+      h3 Love Your Skin
+      p Sennobia was created for people like you. We provide you the essential ingredients to combat environmental (and other) factors that lead to our skin's abuse. Make Sennobia a part of your daily skin care regimen and you will notice the Sennobia difference.
+      a(href="#contact").button.button-secondary.button-large.Pill-button Request Free Trial
+
+
+block productsContent
+  .container
+    .Content-one-half
+      h2 Why Sennobia
+      h3 Our Products
+      p Our products are designed with you in mind. We pay close attention to the ingredients we use to ensure a rich and luxurious feel before and after use. We offer a full line of facial skin care products that will help maintain as well as rejuvenate your skin.
+
+
+block storeContent
+  .container.Text-center
+    .Breathing-room--small
+      h3 Our Store
+      p There is only you and your camera. The limitations in your photography are in yourself, for what we see is what we are.
+
+    .grid-flex-container
+      .Card.grid-flex-cell
+        .Card__image(style="background-image: url(img/regen-med.jpg)")
+        .Card__content
+          h2 Regenerating
+          p Renew vitality, enhance regeneration
+          p $89.00 - 2.0 OZ
+          a(href="https://squareup.com/store/sennobia-cosmetics/item/regenerating-cream").flicker__button.button.button-primary.button-large.Pill-button Purchase
+
+      .Card.grid-flex-cell
+        .Card__image(style="background-image: url(img/rejuv-med.jpg)")
+        .Card__content
+          h2 Rejuvenating
+          p Enhance firmness &amp; uniformity of skin.
+          p $99.00 - 2.0 OZ
+          a(href="https://squareup.com/store/sennobia-cosmetics/item/rejuvenating-cream").flicker__button.button.button-primary.button-large.Pill-button Purchase
+
+      .Card.grid-flex-cell
+        .Card__image(style="background-image: url(img/eye-med.jpg)")
+        .Card__content
+          h2 Eye
+          p Minimize puffiness, fine lines, & wrinkles.
+          p $69.00 - 0.5 OZ
+          a(href="https://squareup.com/store/sennobia-cosmetics/item/eye-cream").flicker__button.button.button-primary.button-large.Pill-button Purchase
+
+
+block contactContent
+  .container
+    h2.text-center We love feedback
+    h3 Contact Us
+    form(action="https://formspree.io/info@sennobia.com" method="POST").Contact__form
+      .grid-flex-container
+        .grid-flex-cell
+          .form-element
+            label(for='name') Your Name
+            input(type='text', name='name', id='name', placeholder='Your name', class='form-input')
+
+        .grid-flex-cell
+          .form-element
+            label(for='email') Your Email
+            input(type='text', name='_replyto', id='email', placeholder='Your email', class='form-input')
+
+      .grid-flex-container
+        .grid-flex-cell
+          .form-element
+            label(for='comment') Write a comment
+            textarea(id='comment', name='comment', class='form-input', placeholder='This is a sample message')
+      .grid-flex-container
+        .grid-flex-cell
+          .form-element
+            label.input-checkbox.form-element
+              input(type='checkbox', name='freetrial')
+              | Yes! Please contact me for a free trial or consultation.
+
+      button(type='submit', class='button button-gold') Send
+
+    .Contact__message-received
+      h2.text-center Thank you. Your message has been received.

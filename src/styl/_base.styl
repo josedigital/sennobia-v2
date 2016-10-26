@@ -1,0 +1,165 @@
+/*--------------------------------------------------------------------
+*
+* $TYPOGRAPHY
+*
+--------------------------------------------------------------------*/
+
+
+body
+  color: $text-color
+  font-family: $font-base
+
+.button
+  font-family: $font-headings
+
+h2
+  font-family: $font-headings-secondary
+  font-size: 1.2rem
+  letter-spacing: 4px
+  text-transform: uppercase
+h3
+  font-family: $font-headings
+  font-size: 3rem
+  color: $text-color
+  letter-spacing: -3.01px
+
+h6
+  color: black
+  font-family: $font-headings-secondary
+  font-size: 0.75rem
+  font-weight: 700
+  letter-spacing: 4px
+  text-transform: uppercase
+
+
+
+
+/*--------------------------------------------------------------------
+*
+* $SPACING
+*
+--------------------------------------------------------------------*/
+
+
+.container
+  position: relative
+
+section
+  padding: 15rem 0
+  position: relative
+  &.small-spacing
+    padding: 5rem 0
+  &.no-spacing
+    padding: 0
+
+
+
+/*--------------------------------------------------------------------
+
+* $SECTIONS
+*
+--------------------------------------------------------------------*/
+
+.Background-image
+  background-image: linear-gradient( rgba(17,19,20,0.3), rgba(17,19,20,0.2) )
+  height: 100%
+  left: 0
+  position: absolute
+  right: 0
+  top: 0
+  width: 100%
+  z-index: 0
+  .Img-right
+    float: right
+  .Img-full
+    width: 100%
+
+
+.Content-one-half
+  position: relative
+  width: 100%
+  z-index: 1
+  +above($breakpoint-tablet)
+    width: 50%
+  
+
+
+
+/*--------------------------------------------------------------------
+*
+* $BUTTONS
+*
+--------------------------------------------------------------------*/
+
+.button
+  // box-shadow: 1px 3px 8px rgba(77,86,89,0.6)
+  box-shadow: 1px 10px 10px -8px rgba(77,86,89,0.6)
+  transition: all 0.5s
+  &:hover
+    box-shadow: 1px 16px 10px -8px rgba($blue-saturated-dark,0.4)
+  &-secondary
+    background-color: $orange
+
+
+.Pill-button
+  border-radius: 40px
+  font-size: 1rem
+  letter-spacing: 3.4px
+  text-transform: uppercase
+
+
+
+/*--------------------------------------------------------------------
+*
+* $BUTTONS
+*
+--------------------------------------------------------------------*/
+z-1()
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37)
+z-2() 
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2)
+z-3() 
+  box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3), 0 11px 7px 0 rgba(0, 0, 0, 0.19)
+z-4() 
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.3), 0 14px 12px 0 rgba(0, 0, 0, 0.17)
+z-5() 
+  box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15)
+
+
+.Card
+  background-color: $white
+  border-radius: 4px
+  margin: 0 20px 4rem
+  +above($breakpoint-tablet)
+    margin-bottom: 0
+  min-height: 500px
+  overflow: hidden
+  padding: 0
+  transition: all 400ms cubic-bezier(0.165, 0.840, 0.440, 1.000)
+  z-2()
+  &:hover
+    z-4()
+.Card__image
+  background-position: center center
+  background-repeat: no-repeat
+  height: 200px
+  overflow: hidden
+.Card__content
+  height: 240px
+  padding: 20px
+
+
+/*--------------------------------------------------------------------
+*
+* $HELPERS
+*
+--------------------------------------------------------------------*/
+
+.Text-center
+  text-align: center
+.Breathing-room--small
+  padding: 2rem 0
+.Breathing-room--medium
+  padding: 4rem 0
+.Breathing-room--large
+  padding: 6rem 0

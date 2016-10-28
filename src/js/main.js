@@ -5,50 +5,60 @@ $(document).ready(function() {
     $(window).stop(true).scrollTo(this.hash, {duration:1000, interrupt:true});
     return false;
   });
-  $('.js-button').on('click', function() {
+  $('.js-scroll-button').on('click', function() {
     $(window).stop(true).scrollTo(this.hash, {duration:1000, interrupt:true});
     return false;
   });
 
+  var $store = $('.Store');
+  var storeTop = $store.offset().top;
+  $(window).scroll(function() {
+    if ( $(window).scrollTop() >= storeTop ) {
+      $('.Navigation a').addClass('dark');
+    } else {
+      $('.Navigation a').removeClass('dark');
+    }
+  });
+
 
 // Hide Header on on scroll down
-var didScroll;
-var lastScrollTop = 0;
-var delta = 5;
-var navbarHeight = $('header').outerHeight();
+// var didScroll;
+// var lastScrollTop = 0;
+// var delta = 5;
+// var navbarHeight = $('header').outerHeight();
 
-$(window).scroll(function(event){
-    didScroll = true;
-});
+// $(window).scroll(function(event){
+//     didScroll = true;
+// });
 
-setInterval(function() {
-    if (didScroll) {
-      hasScrolled();
-      didScroll = false;
-    }
-}, 250);
+// setInterval(function() {
+//     if (didScroll) {
+//       hasScrolled();
+//       didScroll = false;
+//     }
+// }, 250);
 
-function hasScrolled() {
-    var st = $(this).scrollTop();
+// function hasScrolled() {
+//     var st = $(this).scrollTop();
 
-    // Make sure they scroll more than delta
-    if(Math.abs(lastScrollTop - st) <= delta)
-        return;
+//     // Make sure they scroll more than delta
+//     if(Math.abs(lastScrollTop - st) <= delta)
+//         return;
 
-    // If they scrolled down and are past the navbar, add class .nav-up.
-    // This is necessary so you never see what is "behind" the navbar.
-    if (st > lastScrollTop && st > navbarHeight){
-        // Scroll Down
-        $('header').removeClass('nav-down').addClass('nav-up');
-    } else {
-        // Scroll Up
-        if(st + $(window).height() < $(document).height()) {
-            $('header').removeClass('nav-up').addClass('nav-down');
-        }
-    }
+//     // If they scrolled down and are past the navbar, add class .nav-up.
+//     // This is necessary so you never see what is "behind" the navbar.
+//     if (st > lastScrollTop && st > navbarHeight){
+//         // Scroll Down
+//         $('header').removeClass('nav-down').addClass('nav-up');
+//     } else {
+//         // Scroll Up
+//         if(st + $(window).height() < $(document).height()) {
+//             $('header').removeClass('nav-up').addClass('nav-down');
+//         }
+//     }
 
-    lastScrollTop = st;
-}
+//     lastScrollTop = st;
+// }
 
 
 
@@ -61,7 +71,7 @@ function hasScrolled() {
         var formData = {
             'Name'              : $('input[name=name]').val(),
             'Email Address'     : $('input[name=_replyto]').val(),
-            'Comment'           : $('input[name=comment]').val(),
+            'Comment'           : $('input[name=comments]').val(),
             'Would like a free trial'         : $('input[name=freetrial').val()
         };
 
@@ -72,7 +82,7 @@ function hasScrolled() {
             method      : 'POST',
             url         : 'https://formspree.io/info@sennobia.com', // the url where we want to POST
             data        : formData, // our data object
-            dataType    : 'json', // what type of data do we expect back from the server
+            dataType    : 'json' // what type of data do we expect back from the server
         })
             // using the done promise callback
             .done(function(data) {
